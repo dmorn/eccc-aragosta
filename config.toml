@@ -1,5 +1,0 @@
-## BASIC SITE CONFIGURATION
-baseURL = "https://aragosta.encagnchechega.org"
-languageCode = "it-IT"
-title = "Aragosta Cycling"
-theme = "aragosta"
