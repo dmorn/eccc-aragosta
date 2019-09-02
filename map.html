@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8' />
+  <title>Circuito Aragosta (Re)Cycling</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css' rel='stylesheet' />
+  <link rel="stylesheet" href="assets/fonts/maxwell/stylesheet.css" />
+  <link rel="stylesheet" href="assets/fonts/gotham-light/stylesheet.css" />
+  <link href='assets/stylesheet.css' rel="stylesheet" />
+</head>
+
+<body class="container-map">
+  <div id='map'></div>
+  <button class="button-home btn btn-primary"
+    onclick="window.location.href = 'https://aragosta.encagnchechega.org'">Torna alla Home</button>
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZWNjYyIsImEiOiJjanp0cXU5b3cwN2thM2hteGJpbmZjdDd1In0.W2HBvB6gl7GJhatzpfJZog';
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/eccc/cjztr4qzv057h1cp8qss24geo',
+      center: [11.5932, 46.2960],
+      zoom: 15
+    });
+
+    map.on('click', function (e) {
+      var features = map.queryRenderedFeatures(e.point, {
+        layers: ['aragosta-circuit-icons'] // replace this with the name of the layer
+      });
+
+      if (!features.length) {
+        return;
+      }
+      var feature = features[0];
+      var popup = new mapboxgl.Popup({ offset: [0, -15] })
+        .setLngLat(feature.geometry.coordinates)
+        .setHTML('<h3 class="text-maxwell text-pink m-2">' + feature.properties.stand + '</h3>')
+        .addTo(map);
+    });
+  </script>
+</body>
+
+</html>
