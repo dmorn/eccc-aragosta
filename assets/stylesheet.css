@@ -1,15 +1,12 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 18px;
+  font-family: 'Gotham';
 }
 
-header {
-  margin-top: 22px;
-  margin-bottom: 22px;
-}
-
-.text-header {
-  font-size: 19px;
+.container {
+  max-width: 720px;
 }
 
 .text-maxwell {
@@ -20,7 +17,15 @@ header {
   color: #93278f;
 }
 
+.text-purple:hover {
+  color: #93278f;
+}
+
 .text-blu {
+  color: #29abe2;
+}
+
+.text-blu:hover {
   color: #29abe2;
 }
 
@@ -28,23 +33,76 @@ header {
   color: #f42592;
 }
 
-.text-section {
-  margin: 22px;
-  font-size: 11px;
-  font-family: 'Gotham';
-}
-
-.logos-section {
-  margin-top: 22px;
-  margin-bottom: 22px;
-  height: auto;
+.text-pink:hover {
+  color: #f42592;
 }
 
 .text-time {
   font-weight: bold;
-  font-size: 13px;
+  font-size: 1.1em;
 }
 
-.pad-10 {
-  padding: 8px;
+.link {
+  font-weight: 700;
+  color: black;
+}
+
+.link::before {
+  content: "> ";
+}
+
+.link::after {
+  content: " <";
+}
+
+nav {
+  font-size: 1.4em;
+}
+
+h2 {
+  margin-top: 48px;
+  margin-bottom: 16px;
+  font-size: 1.8em;
+}
+
+h2 .link {
+  font-size: 0.6em;
+}
+
+h2 .link:hover {
+  color: inherit;
+}
+
+.footer {
+  background-color: #fdf7c8;
+  position: relative;
+  padding-top: 40px;
+  margin-top: 380px;
+}
+
+.footer p:last-child {
+  margin-bottom: 0;
+}
+
+.footer-logo {
+  position: absolute;
+  top: -350px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 400px;
+}
+
+.footer a {
+  color: inherit;
+}
+
+/* Overrides for desktop */
+@media (min-width: 500px) {
+  nav {
+    font-size: 1.8em;
+  }
+
+  nav a {
+    padding: 0 0.3em;
+  }
 }
