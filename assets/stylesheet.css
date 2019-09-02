@@ -96,6 +96,24 @@ h2 .link:hover {
   color: inherit;
 }
 
+.container-map {
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.button-home {
+    position: absolute;
+    margin-top: 24px;
+    margin-left: 24px;
+}
+
 /* Overrides for desktop */
 @media (min-width: 500px) {
   nav {
