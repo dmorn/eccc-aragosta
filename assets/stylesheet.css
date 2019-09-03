@@ -94,11 +94,12 @@ h2 .link:hover {
   top: -350px;
   left: 50%;
   transform: translateX(-50%);
-  height: 400px;
+  height: 380px;
 }
 
 .footer a {
   color: inherit;
+  text-decoration: underline;
 }
 
 .container-map {
